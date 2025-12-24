@@ -9,5 +9,4 @@ public class ElTumbometroApplication {
     public static void main(String[] args) {
         SpringApplication.run(ElTumbometroApplication.class, args);
     }
-
 }

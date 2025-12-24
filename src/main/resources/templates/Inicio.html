@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="~{fragments/header :: elheader('Inicio')}"></head>
+
+<body class="bg-gray-900 text-gray-300">
+
+<div th:replace="~{fragments/navbar :: navbar}"></div>
+
+<!--<main>
+    <div id="default-carousel" class="relative w-full" data-carousel="slide">
+
+        <div class="relative h-96 overflow-hidden md:h-[600px]">
+
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                <img th:src="@{/imagenes/carrousel/negro.jpg}" class="absolute block w-full h-full object-cover"
+                     alt="Moto Negra">
+                <div class="absolute inset-0 bg-black/50 flex flex-col justify-center items-start px-12 md:px-24">
+                    <h1 class="text-4xl md:text-6xl font-bold text-white mb-4">¿Listo para rodar?</h1>
+                    <p class="text-xl text-gray-200 mb-6 max-w-2xl">Regístrate gratis, añade tu moto y empieza a
+                        construir tu historial de rutas hoy mismo.</p>
+                    <a th:href="@{/usuarios/registro}"
+                       class="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition">
+                        Únete ahora
+                    </a>
+                </div>
+            </div>
+
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                <img th:src="@{/imagenes/carrousel/viaje.jpg}" class="absolute block w-full h-full object-cover"
+                     alt="Viaje">
+                <div class="absolute inset-0 bg-black/50 flex flex-col justify-center items-center text-center px-4">
+                    <h1 class="text-4xl md:text-6xl font-bold text-white mb-4">Tu diario de rutas.</h1>
+                    <p class="text-xl text-gray-200 mb-6 max-w-2xl">Con tu moto hasta el último kilómetro, guarda todos
+                        los detalles.</p>
+
+                    <div th:if="${session.usuarioLogueado != null}">
+                        <a th:href="@{/mis-rutas}"
+                           class="px-6 py-3 bg-green-600 hover:bg-green-700 text-white font-bold rounded-lg transition">
+                            Añadir nuevas rutas
+                        </a>
+                    </div>
+
+                    <div th:unless="${session.usuarioLogueado != null}">
+                        <a th:href="@{/iniciar-sesion}"
+                           class="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition">
+                            Iniciar Sesión para rutear
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                <img th:src="@{/imagenes/carrousel/grupo.jpg}" class="absolute block w-full h-full object-cover"
+                     alt="Grupo">
+                <div class="absolute inset-0 bg-black/50 flex flex-col justify-center items-end px-12 md:px-24 text-right">
+                    <h1 class="text-4xl md:text-6xl font-bold text-white mb-4">Mejor con amigos.</h1>
+                    <p class="text-xl text-gray-200 mb-6 max-w-2xl">Descubre las rutas de otros usuarios y comparte tus
+                        experiencias.</p>
+                    <a th:href="@{/rutas}"
+                       class="px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white font-bold rounded-lg transition">
+                        Ver rutas comunitarias
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <button type="button"
+                class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+                data-carousel-prev>
+                <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 group-hover:bg-white/50">
+                    <svg class="w-4 h-4 text-white rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                         fill="none" viewBox="0 0 6 10">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M5 1 1 5l4 4"/>
+                    </svg>
+                    <span class="sr-only">Previous</span>
+                </span>
+        </button>
+        <button type="button"
+                class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+                data-carousel-next>
+                <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 group-hover:bg-white/50">
+                    <svg class="w-4 h-4 text-white rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                         fill="none" viewBox="0 0 6 10">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="m1 9 4-4-4-4"/>
+                    </svg>
+                    <span class="sr-only">Next</span>
+                </span>
+        </button>
+    </div>
+
+    <div class="container mx-auto px-4 py-16">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+
+            <div class="flex flex-col items-center">
+                <img th:src="@{/imagenes/carrousel/casco.png}"
+                     class="w-40 h-40 rounded-full mb-6 object-cover border-4 border-blue-600 shadow-lg shadow-blue-500/50">
+                <h2 class="text-2xl font-bold text-white mb-3">Tu perfil de motero</h2>
+                <p class="text-gray-400 leading-relaxed">Sube tu foto de perfil, escribe tu biografía y deja que la
+                    comunidad conozca al motero detrás del casco.</p>
+            </div>
+
+            <div class="flex flex-col items-center">
+                <img th:src="@{/imagenes/carrousel/moto.png}"
+                     class="w-40 h-40 rounded-full mb-6 object-cover border-4 border-blue-600 shadow-lg shadow-blue-500/50">
+                <h2 class="text-2xl font-bold text-white mb-3">El garaje virtual</h2>
+                <p class="text-gray-400 leading-relaxed">Añade los detalles de tu moto a tu perfil. Desde el modelo
+                    hasta el color, tu máquina es la protagonista.</p>
+            </div>
+
+            <div class="flex flex-col items-center">
+                <img th:src="@{/imagenes/carrousel/carretera.png}"
+                     class="w-40 h-40 rounded-full mb-6 object-cover border-4 border-blue-600 shadow-lg shadow-blue-500/50">
+                <h2 class="text-2xl font-bold text-white mb-3">Explora y descubre</h2>
+                <p class="text-gray-400 leading-relaxed">Filtra las rutas de la comunidad por marca de moto, dificultad
+                    o kilómetros para planear tu próxima salida.</p>
+            </div>
+
+        </div>
+    </div>
+
+</main>-->
+
+<div th:replace="~{fragments/footer :: footer}"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
+</body>
+
+</html>

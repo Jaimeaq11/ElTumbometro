@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head th:fragment="elheader(titulo)">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title th:text="${titulo != null} ? ${titulo} : 'El Tumbometro App'"></title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet" />
+
+    <link th:href="@{/css/main.css}" rel="stylesheet" type="text/css"/>
+    <link th:href="@{/css/centrar.css}" rel="stylesheet" type="text/css"/>
+    <link th:href="@{/css/carrousel.css}" rel="stylesheet" type="text/css"/>
+    <link th:href="@{/css/botones.css}" rel="stylesheet" type="text/css"/>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        // Aquí puedes definir tus colores corporativos si quieres
+                        // 'mi-azul': '#1fb6ff',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+</html>
