@@ -1,0 +1,25 @@
+{
+  "name": "eltumbometro",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "npx tailwindcss -i ./src/main/resources/static/css/input.css -o ./src/main/resources/static/css/style.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jaimeaq11/ElTumbometro.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Jaimeaq11/ElTumbometro/issues"
+  },
+  "homepage": "https://github.com/Jaimeaq11/ElTumbometro#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.4.17"
+  }
+}
