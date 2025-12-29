@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @Table(name = "usuarios") // 2. Dice: "La tabla en Supabase se llamará 'usuarios'"
 @Data // 3. Lombok: Crea Getters, Setters, toString, equals automáticamente
 @NoArgsConstructor // 4. Crea constructor vacío (obligatorio para JPA)
-@AllArgsConstructor // 5. Crea constructor con todo
+@AllArgsConstructor // 5. Crea constructor con todoo
 
 public class Usuario {
 
@@ -21,7 +21,7 @@ public class Usuario {
     private String nombre;
 
     @Column(nullable = false)
-    private String correo;
+    private String email;
 
     private String contrasenia;
 }

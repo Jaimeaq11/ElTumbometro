@@ -1,32 +1,101 @@
 <!DOCTYPE html>
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
 
-<head th:fragment="elheader(titulo)">
+<head th:fragment="elhead(titulo)">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title th:text="${titulo != null} ? ${titulo} : 'El Tumbometro App'"></title>
 
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+          rel="stylesheet">
 
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet" />
+    <!-- Para Flowbite -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
 
-    <link th:href="@{/css/main.css}" rel="stylesheet" type="text/css"/>
-    <link th:href="@{/css/centrar.css}" rel="stylesheet" type="text/css"/>
-    <link th:href="@{/css/carrousel.css}" rel="stylesheet" type="text/css"/>
-    <link th:href="@{/css/botones.css}" rel="stylesheet" type="text/css"/>
-
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        // Aquí puedes definir tus colores corporativos si quieres
-                        // 'mi-azul': '#1fb6ff',
-                    }
-                }
-            }
-        }
-    </script>
+    <!-- IMPORTANTE DEBE IR LO ULTIMO (JODER EL DOLOR DE CABEZA QUE ME HA DADO ESTO)-->
+    <link th:href="@{/css/style.css}" rel="stylesheet"/>
 </head>
+
+<body>
+<header th:fragment="elheader">
+    <div class="mx-auto px-6 pt-4">
+        <div class="flex h-16 items-center justify-between">
+            <div class="flex items-center">
+                <a href="/">
+                    <img th:src="@{/imagenes/logo_azul.png}"
+                         class="w-auto flex items-center w-full transition-all hover:scale-105 h-20 w-20">
+
+                </a>
+            </div>
+
+            <div>
+                <nav>
+                    <ul class="flex items-center gap-6 text-sm">
+                        <li>
+                            <a class="text-gray-500 transition hover:text-gray-500/75 dark:text-white dark:hover:text-white/75"
+                               href="#">
+                                About
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="text-gray-500 transition hover:text-gray-500/75 dark:text-white dark:hover:text-white/75"
+                               href="#">
+                                Careers
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="text-gray-500 transition hover:text-gray-500/75 dark:text-white dark:hover:text-white/75"
+                               href="#">
+                                History
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="text-gray-500 transition hover:text-gray-500/75 dark:text-white dark:hover:text-white/75"
+                               href="#">
+                                Services
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="text-gray-500 transition hover:text-gray-500/75 dark:text-white dark:hover:text-white/75"
+                               href="#">
+                                Projects
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="text-gray-500 transition hover:text-gray-500/75 dark:text-white dark:hover:text-white/75"
+                               href="#">
+                                Blog
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="flex items-center">
+                <div class="flex px-1">
+                    <a class="bg-white text-black rounded-lg py-1.5 px-5 transition-all hover:bg-gray-300"
+                       href="#">
+                        Log in
+                    </a>
+                </div>
+                <div class="flex px-1 mx-1">
+                    <a class="bg-primario text-white rounded-lg py-1.5 px-5 transition-all hover:bg-primario_hover"
+                       href="#">
+                        Registrarse
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+</body>
 </html>

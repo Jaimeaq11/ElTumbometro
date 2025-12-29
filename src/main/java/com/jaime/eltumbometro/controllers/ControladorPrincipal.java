@@ -11,6 +11,6 @@ public class ControladorPrincipal   {
     public String paginaPrincipal(Model model) {
 
         model.addAttribute("titulo", "Bienvenido al Tumbómetro");
-        return "Inicio";
+        return "landing";
     }
 }

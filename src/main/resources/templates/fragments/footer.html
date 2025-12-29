@@ -1,22 +1,24 @@
 <!DOCTYPE html>
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
 
-<footer th:fragment="footer" class="py-6 my-4 mt-auto bg-gray-900 text-white">
-    <ul class="flex justify-center border-b border-gray-700 pb-6 mb-6">
-        <li class="px-2">
-            <a th:href="@{/inicio}" class="px-2 text-gray-300 hover:text-white transition-colors">Inicio</a>
-        </li>
-        <li class="px-2">
-            <a th:href="@{/rutas}" class="px-2 text-gray-300 hover:text-white transition-colors">Rutas</a>
-        </li>
-    </ul>
-
-    <p class="text-center text-gray-400 text-sm">© 2025 Company, Inc</p>
-
-    <script th:src="@{/js/validarFormRutas.js}"></script>
-    <script th:src="@{/js/validarFormUsuario.js}"></script>
-    <script th:src="@{/js/botonLike.js}"></script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
+<footer th:fragment="elfooter" class="border-t border-gray-500 mt-4">
+    <div class="mx-auto max-w-screen-xl p-4 m-4 md:flex md:items-center md:justify-between">
+        <span class="text-base">© 2025 ElTumbómetro™.</span>
+        <ul class="flex flex-wrap mt-3 text-sm font-medium sm:mt-0">
+            <li>
+                <a href="#" class="text-base me-6">About</a>
+            </li>
+            <li>
+                <a href="#" class="text-base me-6">Privacy Policy</a>
+            </li>
+            <li>
+                <a href="#" class="text-base me-6">Licensing</a>
+            </li>
+            <li>
+                <a href="#" class="text-base me-6">Contact</a>
+            </li>
+        </ul>
+    </div>
 </footer>
+
 </html>
