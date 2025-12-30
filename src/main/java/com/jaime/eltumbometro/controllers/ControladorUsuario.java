@@ -13,12 +13,6 @@ import java.util.List;
 @RequestMapping("/usuarios")
 public class ControladorUsuario {
 
-    @Autowired
-    private UsuarioRepository usuarioRepository;
 
-    @GetMapping("/registrar")
-    public String mostrarFormulario(Model model) {
-        model.addAttribute("usuario", new Usuario());
-        return "registro";
-    }
+
 }

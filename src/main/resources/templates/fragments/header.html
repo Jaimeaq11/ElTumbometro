@@ -23,8 +23,8 @@
 <body>
 <header th:fragment="elheader">
     <div class="mx-auto px-6 pt-4">
-        <div class="flex h-16 items-center justify-between">
-            <div class="flex items-center">
+        <div class="grid grid-cols-3 h-16 items-center">
+            <div class="flex items-center justify-self-start">
                 <a href="/">
                     <img th:src="@{/imagenes/logo_azul.png}"
                          class="w-auto flex items-center w-full transition-all hover:scale-105 h-20 w-20">
@@ -32,7 +32,7 @@
                 </a>
             </div>
 
-            <div>
+            <div class="justify-self-center">
                 <nav>
                     <ul class="flex items-center gap-6 text-sm">
                         <li>
@@ -80,16 +80,16 @@
                 </nav>
             </div>
 
-            <div class="flex items-center">
+            <div class="flex items-center justify-self-end  ">
                 <div class="flex px-1">
-                    <a class="bg-white text-black rounded-lg py-1.5 px-5 transition-all hover:bg-gray-300"
-                       href="#">
+                    <a class="bg-white text-black rounded-xl py-1.5 px-5 transition-all hover:bg-gray-300"
+                       href="/login">
                         Log in
                     </a>
                 </div>
                 <div class="flex px-1 mx-1">
-                    <a class="bg-primario text-white rounded-lg py-1.5 px-5 transition-all hover:bg-primario_hover"
-                       href="#">
+                    <a class="bg-primario text-white rounded-xl py-1.5 px-5 transition-all hover:bg-blue-400"
+                       href="/registrar">
                         Registrarse
                     </a>
                 </div>
