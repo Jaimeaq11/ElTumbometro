@@ -21,5 +21,5 @@ public class Ruta {
 
     private String descripcion;
     private int distancia;
-    private String imagenURL;
+    private String fotoURL;
 }

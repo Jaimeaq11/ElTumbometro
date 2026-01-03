@@ -1,125 +1,140 @@
 <!DOCTYPE html>
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
-
-<!--<div class="flex justify-between">
-    <div class="flex items-center">
-        <img th:src="@{/imagenes/logo.png}" class="w-20 h-20">
-        <span class="text-2xl ms-2 font-medium">El Tumbómetro</span>
-    </div>
-    <div class="flex items-center justify-center">
-        <button class="text-black bg-white px-4 py-1.5 m-2 rounded-lg">Iniciar Sesión</button>
-        <button class="text-white bg-primario px-4 py-1.5 m-2 rounded-lg">Registrarse</button>
-    </div>
-</div>-->
-
-
-<aside th:fragment="elsidebar" class="fixed left-0 top-0 z-40 flex flex-col w-64 h-screen px-5 py-8 border-r bg-blue-950/30 border-gray-700">
+<body>
+<main></main>
+<aside th:fragment="elsidebar"
+       class="sticky left-0 top-0 z-40 flex-shrink-0 flex flex-col w-64 h-screen px-2 pt-5 border-r bg-blue-950/30 border-gray-700">
     <a href="/">
         <div class="flex items-center justify-center flex-shrink-0 w-full h-16">
             <img th:src="@{/imagenes/logo_azul.png}" class="w-auto h-14 w-14">
-            <span class="text-l ms-2 font-medium transition-all hover:scale-105 hover:text-primario">El Tumbómetro</span>
+            <span class="text-sm ms-2 font-medium transition-all hover:scale-105 hover:text-primario">El Tumbómetro</span>
         </div>
     </a>
 
-    <div class="flex flex-col justify-between flex-1 mt-6 ms-4 me-4">
-        <nav class="flex-1 -mx-3 space-y-3 ">
+    <div class="flex flex-col justify-between flex-1 m-4">
+        <nav class="flex-1 space-y-3 ">
 
             <a class="flex items-center px-3 py-2 text-gray-600 transition-colors duration-300 transform rounded-lg dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-200 hover:text-gray-700"
-               href="#">
+               href="/">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                     stroke="currentColor" class="w-5 h-5">
-                    <path stroke-linecap="round" stroke-linejoin="round"
-                          d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"/>
-                </svg>
-
-                <span class="mx-2 text-sm font-medium">Home</span>
-            </a>
-
-            <a class="flex items-center px-3 py-2 text-gray-600 transition-colors duration-300 transform rounded-lg dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-200 hover:text-gray-700"
-               href="#">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                     stroke="currentColor" class="w-5 h-5">
+                     stroke="currentColor" class="w-6 h-6">
                     <path stroke-linecap="round" stroke-linejoin="round"
                           d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5m.75-9l3-3 2.148 2.148A12.061 12.061 0 0116.5 7.605"/>
                 </svg>
 
-                <span class="mx-2 text-sm font-medium">Panel</span>
+                <span class="mx-2 text-base">Panel principal</span>
             </a>
 
             <a class="flex items-center px-3 py-2 text-gray-600 transition-colors duration-300 transform rounded-lg dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-200 hover:text-gray-700"
                href="#">
-                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24">
-                    <path fill="#cccccc" d="M22 9v11h-2v-9H4v9H2V9l10-4zm-3 3H5v2h14zm0 6H5v2h14zm0-3H5v2h14z"/>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-6 h-6">
+                    <path fill="#cccccc"
+                          d="M294.396 52.127c-17.944.066-35.777 1.834-52.886 4.746c-86.727 14.76-135.612 53.467-161.99 107.824c31.215-2.434 62.002-5.024 91.966-4.838c24.114.15 47.696 2.097 70.54 7.37c15.15 3.5 24.652 16.647 27.607 31.735s.858 32.92-5.055 51.553l-.287.904l-.468.826c-7.762 13.64-24.263 24.498-45.295 35.994c-21.032 11.497-46.695 22.693-72.27 32.428s-51.012 17.98-71.575 23.437c-7.254 1.925-13.85 3.48-19.735 4.657c2.275 31.13 6.562 63.38 12.008 95.98c140.118-38.25 273.5-79.888 403.51-123.254c25.935-44.457 29.927-86.448 16.967-126.734c-22.393-69.605-60.9-107.048-105.215-126.168c-27.696-11.95-57.913-16.57-87.82-16.46zM130.184 179.205c-9.06.51-18.265 1.156-27.532 1.836L59.31 329.386c3.384-.79 6.936-1.663 10.754-2.676a531 531 0 0 0 12.66-3.554c10.022-31.07 43.3-131.415 47.46-143.95zm-46.7 3.262c-10.868.826-21.824 1.654-32.908 2.37c-.32.445-.714.947-1.318 2.267c-1.58 3.45-3.375 9.418-4.912 16.724c-3.075 14.612-5.37 34.727-6.705 54.877c-1.333 20.15-1.73 40.438-1.193 55.582c.268 7.572.79 13.905 1.442 17.96c.048.306.078.312.13.59c.46-.01 1.033-.044 1.546-.064zM224 183c-15.596 0-28.66 12.582-28.66 28.152s13.064 28.155 28.66 28.155s28.66-12.584 28.66-28.155c0-15.57-13.064-28.152-28.66-28.152m0 18c6.12 0 10.66 4.567 10.66 10.152c0 5.586-4.54 10.155-10.66 10.155s-10.66-4.57-10.66-10.155S217.88 201 224 201m230.19 144.865C330.383 386.852 203.285 426.23 70.054 462.56c.413 2.317.81 4.63 1.232 6.948c147.607-26.65 255.974-68.965 371.36-109.164a309 309 0 0 0 11.546-14.48z"/>
                 </svg>
 
-                <span class="mx-2 text-sm font-medium">Mi garaje</span>
+                <span class="mx-2 text-base">Mi garaje</span>
             </a>
 
             <a class="flex items-center px-3 py-2 text-gray-600 transition-colors duration-300 transform rounded-lg dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-200 hover:text-gray-700"
                href="#">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                     stroke="currentColor" class="w-5 h-5">
+                     stroke="currentColor" class="w-6 h-6">
                     <path stroke-linecap="round" stroke-linejoin="round"
                           d="M10.125 2.25h-4.5c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125v-9M10.125 2.25h.375a9 9 0 019 9v.375M10.125 2.25A3.375 3.375 0 0113.5 5.625v1.5c0 .621.504 1.125 1.125 1.125h1.5a3.375 3.375 0 013.375 3.375M9 15l2.25 2.25L15 12"/>
                 </svg>
 
-                <span class="mx-2 text-sm font-medium">Rutas</span>
+                <span class="mx-2 text-base">Rutas</span>
             </a>
 
             <a class="flex items-center px-3 py-2 text-gray-600 transition-colors duration-300 transform rounded-lg dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-200 hover:text-gray-700"
                href="#">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                     stroke="currentColor" class="w-5 h-5">
+                     stroke="currentColor" class="w-6 h-6">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6a7.5 7.5 0 107.5 7.5h-7.5V6z"/>
                     <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 10.5H21A7.5 7.5 0 0013.5 3v7.5z"/>
                 </svg>
 
-                <span class="mx-2 text-sm font-medium">Ranking</span>
+                <span class="mx-2 text-base">Ranking</span>
             </a>
 
             <a class="flex items-center px-3 py-2 text-gray-600 transition-colors duration-300 transform rounded-lg dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-200 hover:text-gray-700"
                href="#">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                     stroke="currentColor" class="w-5 h-5">
+                     stroke="currentColor" class="w-6 h-6">
                     <path stroke-linecap="round" stroke-linejoin="round"
                           d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z"/>
                 </svg>
 
-                <span class="mx-2 text-sm font-medium">Users</span>
+                <span class="mx-2 text-base">Users</span>
             </a>
 
             <a class="flex items-center px-3 py-2 text-gray-600 transition-colors duration-300 transform rounded-lg dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-200 hover:text-gray-700"
                href="#">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                     stroke="currentColor" class="w-5 h-5">
+                     stroke="currentColor" class="w-6 h-6">
                     <path stroke-linecap="round" stroke-linejoin="round"
                           d="M10.343 3.94c.09-.542.56-.94 1.11-.94h1.093c.55 0 1.02.398 1.11.94l.149.894c.07.424.384.764.78.93.398.164.855.142 1.205-.108l.737-.527a1.125 1.125 0 011.45.12l.773.774c.39.389.44 1.002.12 1.45l-.527.737c-.25.35-.272.806-.107 1.204.165.397.505.71.93.78l.893.15c.543.09.94.56.94 1.109v1.094c0 .55-.397 1.02-.94 1.11l-.893.149c-.425.07-.765.383-.93.78-.165.398-.143.854.107 1.204l.527.738c.32.447.269 1.06-.12 1.45l-.774.773a1.125 1.125 0 01-1.449.12l-.738-.527c-.35-.25-.806-.272-1.203-.107-.397.165-.71.505-.781.929l-.149.894c-.09.542-.56.94-1.11.94h-1.094c-.55 0-1.019-.398-1.11-.94l-.148-.894c-.071-.424-.384-.764-.781-.93-.398-.164-.854-.142-1.204.108l-.738.527c-.447.32-1.06.269-1.45-.12l-.773-.774a1.125 1.125 0 01-.12-1.45l.527-.737c.25-.35.273-.806.108-1.204-.165-.397-.505-.71-.93-.78l-.894-.15c-.542-.09-.94-.56-.94-1.109v-1.094c0-.55.398-1.02.94-1.11l.894-.149c.424-.07.765-.383.93-.78.165-.398.143-.854-.107-1.204l-.527-.738a1.125 1.125 0 01.12-1.45l.773-.773a1.125 1.125 0 011.45-.12l.737.527c.35.25.807.272 1.204.107.397-.165.71-.505.78-.929l.15-.894z"/>
                     <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
                 </svg>
 
-                <span class="mx-2 text-sm font-medium">Setting</span>
+                <span class="mx-2 text-base">Setting</span>
             </a>
         </nav>
 
-        <div class="mt-6">
-            <div class="flex items-center justify-between mt-6">
-                <a href="#" class="flex items-center gap-x-2">
-                    <img class="object-cover rounded-full h-7 w-7"
-                         src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&h=634&q=80"
-                         alt="avatar"/>
-                    <span class="text-sm font-medium text-gray-700 dark:text-gray-200">John Doe</span>
-                </a>
 
-                <a href="#"
-                   class="text-gray-500 transition-colors duration-200 rotate-180 dark:text-gray-400 rtl:rotate-0 hover:text-blue-500 dark:hover:text-blue-400">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                         stroke="currentColor" class="w-5 h-5">
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                              d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75"/>
-                    </svg>
-                </a>
+        <div class="relative" id="user-menu-container">
+            <button onclick="toggleUserMenu()"
+                    class="flex items-center w-full gap-2 p-2 hover:bg-gray-800 rounded-lg transition-colors text-left">
+                <img class="object-cover rounded-full h-8 w-8"
+                     th:src="${session.usuarioLogueado.fotoURL}">
+                <div class="flex-1 min-w-0">
+                    <p th:text="${session.usuarioLogueado.nombre}"
+                       class="text-sm font-medium text-white truncate"></p>
+                    <p th:text="${session.usuarioLogueado.email}" class="text-xs text-gray-400 truncate"></p>
+                </div>
+                <svg id="user-menu-arrow" class="w-5 h-5 text-gray-400 transition-transform duration-200"
+                     fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/>
+                </svg>
+            </button>
+
+            <div id="user-dropdown"
+                 class="hidden absolute bottom-full left-0 w-full mb-2 bg-gray-800 border border-gray-700 rounded-lg shadow-xl overflow-hidden z-50">
+
+                <div class="py-1">
+                    <a href="/usuario/editar"
+                       class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white">
+                        Editar Perfil
+                    </a>
+                    <a href="/configuracion"
+                       class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white">
+                        Ajustes
+                    </a>
+                    <a href="/privacidad"
+                       class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white">
+                        Privacidad
+                    </a>
+                </div>
+
+                <div class="border-t border-gray-700"></div>
+
+                <div class="py-1">
+                    <form th:action="@{/logout}" method="post">
+                        <button type="submit"
+                                class="w-full text-left px-4 py-2 text-sm text-red-400 hover:bg-gray-700 hover:text-red-300 flex items-center gap-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                 class="w-5 h-5 transition-colors duration-300 transform">
+                                <path fill="currentColor"
+                                      d="M5 21q-.825 0-1.412-.587T3 19V5q0-.825.588-1.412T5 3h7v2H5v14h7v2zm11-4l-1.375-1.45l2.55-2.55H9v-2h8.175l-2.55-2.55L16 7l5 5z"/>
+                            </svg>
+                            Salir
+                        </button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
 </aside>
+</main>
+</body>
 </html>

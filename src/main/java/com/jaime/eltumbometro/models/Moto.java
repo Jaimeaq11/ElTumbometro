@@ -25,4 +25,8 @@ public class Moto {
     private int cilindrada;
     private String color;
     private double potencia;
+
+    @ManyToOne
+    @JoinColumn(name = "usuario_id")
+    private Usuario usuario;
 }

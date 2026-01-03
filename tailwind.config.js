@@ -9,7 +9,7 @@ module.exports = {
             colors: {
                 'fondo': '#121212',
                 'primario': '#0d51f4',   // Un azul racing agresivo
-                'primario_hover': '#0a37a1'
+                'primario_hover': '#0a41c5'
             },
             fontFamily: {
                 'Poppins': ['Poppins', 'sans-serif'],

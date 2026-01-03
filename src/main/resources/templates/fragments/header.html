@@ -16,24 +16,26 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
 
+    <script th:src="@{/js/boton_menu.js}"></script>
+
     <!-- IMPORTANTE DEBE IR LO ULTIMO (JODER EL DOLOR DE CABEZA QUE ME HA DADO ESTO)-->
     <link th:href="@{/css/style.css}" rel="stylesheet"/>
 </head>
 
 <body>
 <header th:fragment="elheader">
-    <div class="mx-auto px-6 pt-4">
+    <div class="mx-auto px-3 md:px-6 pt-2 md:pt-4">
         <div class="grid grid-cols-3 h-16 items-center">
             <div class="flex items-center justify-self-start">
                 <a href="/">
                     <img th:src="@{/imagenes/logo_azul.png}"
-                         class="w-auto flex items-center w-full transition-all hover:scale-105 h-20 w-20">
+                         class="w-auto flex items-center w-full transition-all hover:scale-105 md:h-20 md:w-20 h-16 w-16">
 
                 </a>
             </div>
 
             <div class="justify-self-center">
-                <nav>
+                <nav class="hidden lg:flex">
                     <ul class="flex items-center gap-6 text-sm">
                         <li>
                             <a class="text-gray-500 transition hover:text-gray-500/75 dark:text-white dark:hover:text-white/75"
@@ -80,19 +82,16 @@
                 </nav>
             </div>
 
-            <div class="flex items-center justify-self-end  ">
-                <div class="flex px-1">
-                    <a class="bg-white text-black rounded-xl py-1.5 px-5 transition-all hover:bg-gray-300"
-                       href="/login">
-                        Log in
-                    </a>
-                </div>
-                <div class="flex px-1 mx-1">
-                    <a class="bg-primario text-white rounded-xl py-1.5 px-5 transition-all hover:bg-blue-400"
-                       href="/registrar">
-                        Registrarse
-                    </a>
-                </div>
+            <div class="flex items-center justify-self-end gap-2 sm:gap-4 md:items-center whitespace-nowrap">
+                <a class="bg-white text-black rounded-xl py-1.5 px-3 md:px-5 transition-all hover:bg-gray-300 sm:text-base text-sm"
+                   href="/login">
+                    Log in
+                </a>
+
+                <a class="bg-primario text-white rounded-xl py-1.5 px-3 md:px-5 transition-all hover:bg-blue-400 sm:text-base text-sm"
+                   href="/registrar">
+                    Registrarse
+                </a>
             </div>
         </div>
     </div>

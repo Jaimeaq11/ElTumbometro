@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Entity // 1. Dice: "Esto es una tabla de base de datos"
 @Table(name = "usuarios") // 2. Dice: "La tabla en Supabase se llamará 'usuarios'"
 @Data // 3. Lombok: Crea Getters, Setters, toString, equals automáticamente
@@ -24,4 +26,9 @@ public class Usuario {
     private String email;
 
     private String contrasenia;
+    private String fotoURL;
+
+    @OneToMany
+    @JoinColumn(name = "moto_id")
+    private List<Moto> moto;
 }
